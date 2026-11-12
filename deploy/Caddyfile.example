@@ -1,0 +1,5 @@
+# Replace whatsappify.example.com with your actual domain.
+# Add only this block to the shared Caddyfile that serves that domain.
+sappify.haguma.com {
+    reverse_proxy frontend_whatsappify:80
+}

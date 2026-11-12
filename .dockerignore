@@ -1,0 +1,17 @@
+# Only the public frontend and Nginx configuration enter the build context.
+**
+!Dockerfile
+!deploy/
+!deploy/nginx.conf
+!frontend/
+!frontend/index.html
+!frontend/assets/
+!frontend/assets/**
+**/.*
+**/.*/**
+**/node_modules
+**/node_modules/**
+**/*.key
+**/*.pem
+**/*.db
+**/*.sqlite*

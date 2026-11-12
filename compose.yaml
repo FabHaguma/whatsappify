@@ -1,0 +1,29 @@
+name: whatsappify
+
+services:
+  frontend_whatsappify:
+    image: frontend_whatsappify:${RELEASE_TAG:?Set RELEASE_TAG to a unique release tag}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    pull_policy: never
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - caddy_network
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-T", "3", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  caddy_network:
+    external: true
