@@ -1,6 +1,6 @@
 # WhatsAppify
 
-1. In `C:\Users\Fabrice\My_Documents\Programming\NodeJs\whatsappify`, run `npm run dev`.
+1. In `.\whatsappify`, run `npm run dev`.
 2. Open **http://127.0.0.1:8080**. Write or paste a report and format it with the toolbar.
 3. Click **Copy for WhatsApp** or **Copy as Markdown**, then paste into your destination.
 
